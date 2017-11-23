@@ -1,0 +1,23 @@
+
+	classe de teste para uma classe que só retorna uma string
+
+@isTest
+private class GC_GetCountryUser_Test {
+	
+	@isTest static void test() {	
+
+		String countryUser  = GC_GetCountryUser.getCountry();	
+
+	}
+
+}
+
+public class GC_GetCountryUser {
+
+     @AuraEnabled
+    public static String getCountry() {
+        String user = UserInfo.getUserId();
+        
+        return [SELECT id, Country from user where id =:user].Country; 
+    }
+    

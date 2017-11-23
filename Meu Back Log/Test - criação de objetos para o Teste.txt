@@ -1,0 +1,37 @@
+
+		criação de objetos para o Teste
+
+@isTest
+private class GC_GetAccountAsset_Test {
+	
+	@isTest static void test() {
+
+		Account gAccount = new Account();
+		gAccount.name = 'Test Account';
+        gAccount.recordTypeId = [SELECT id from recordType where developerName = 'GC_Farm'].id;
+        insert gAccount;
+
+		Contact contact = new Contact();
+        contact.lastName = 'last Name';
+        contact.accountId = gAccount.id;
+        contact.recordTypeId = Schema.SObjectType.Contact.getRecordTypeInfosByName().get('EU Contact').getRecordTypeId();
+        contact.GC_ContactType__c = 'Consultant';
+        contact.GC_MainLanguage__c = 'Spanish';
+        contact.GC_ContactSegmentation__c = 'Professional';
+        contact.Phone = '82313100';
+        insert contact;
+
+
+		Asset assetTest = new Asset();
+		assetTest.Name = 'Asset-008822';
+		assetTest.GC_AssetType__c = 'Megalab';
+		assetTest.Account = gAccount.id;
+		assetTest.Contact = contact.id;
+		insert assetTest;
+
+		 GC_GetAccountAsset.getAccount('02i1F00000048V9QAI');
+
+
+	}
+	
+}
