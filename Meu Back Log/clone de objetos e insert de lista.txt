@@ -1,0 +1,27 @@
+	//adicionando uma query de no maximo 200 Accounts que tem o billingstate = a string recebida pelo metodo AddPrimaryContact atribuida a status na lista de contas
+		List<Account> accounts = [select id from account where billingstate = :status LIMIT 200];
+
+		List<Contact> contatosLista = new List<Contact>();
+
+		for (Account conta : accounts){
+
+			//clonando o obejto Contact e atribuindo propiedades a ele.
+			Contact ctcClone = objContato.clone();
+			ctcClone.Id = null;
+			ctcClone.AccountId = conta.Id;
+			//adicionando o clone a lista de Contatos
+			contatosLista.add(ctcClone);
+	} 
+insert contatosLista;
+
+}
+
+abra o aplicativo Visual CertExam Manager {foto}
+clique em "Add" para adicionar o arquivo da prova(o arquivo está na mesma pasta do programa)
+adicione o arquivo e clique em "Start".
+
+abrirá uma janela de configuração rápida, coloque digite seu nome e configure o tempo a sua escolha e clique em "OK".
+você tembém pode configurar a quantidade de questões.
+clique em "Begin" para começar a prova.
+
+essa ferramenta tem fins de estudo, então está permitido você pausar o tempo (caso seja necessário).
