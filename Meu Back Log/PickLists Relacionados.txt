@@ -1,0 +1,17 @@
+criar um pickList normal como picklist de um País, com os valores do país ex:
+
+Brasil
+Argentina
+U.S.A
+
+depois cria um picklist com todas as opções possíveis...
+
+azul
+amarelo
+vermelho
+...
+
+depois vai no field de País e na área Field Dependencies, new...relaciona com o outro picklist
+e relaciona os valores adequados para cada País
+
+Pronto!!

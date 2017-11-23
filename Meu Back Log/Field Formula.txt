@@ -1,0 +1,5 @@
+criar um campo formula do tipo texto para trazer informações de outro Objeto
+
+ex:  um campo formula em uma Opportunity que exibe os valores do endereço do objeto Account
+
+advanced formula...  pode usar  +BR() + para quebrar linhas.

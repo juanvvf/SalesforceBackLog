@@ -1,0 +1,3 @@
+criar campo em outro Record type
+
+cria o field no objeto normalmente e na hora de dizer o Layout de visualização, escolhe o layout referente ao Record Type.
